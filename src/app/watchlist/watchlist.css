@@ -1,0 +1,19 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+}
+
+.movie-box {
+  width: 150px;
+  border-radius: 10px;
+}

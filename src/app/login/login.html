@@ -1,0 +1,19 @@
+<h2>giriş yap</h2>
+
+<input [(ngModel)]="username" placeholder="username">
+<br><br>
+
+<input [(ngModel)]="password" placeholder="password">
+<br><br>
+
+<button (click)="login()">giriş yap</button>
+<br><br>
+
+<p>veya GOOGLE ile giriş</p>
+<div id="googleBtn"></div>
+<br><br>
+
+<p>
+  hesabın yok mu?
+  <button (click)="goRegister()">kayıt ol</button>
+</p>

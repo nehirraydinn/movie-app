@@ -1,0 +1,31 @@
+<h2>film ara</h2>
+
+<input #filmAdi placeholder="film adı gir">
+<button (click)="search(filmAdi.value)">ara</button>
+
+<!-- <button (click)="goToWatchlist()">
+  watchlist
+</button>
+<button (click)="goToWatchedlist()">
+  already watched
+</button> -->
+
+<div class="movie-grid">
+  <div class="movie-box" *ngFor="let m of movies">
+
+    <!-- POSTER-->
+    <img [src]="m.Poster"
+         width="150"
+         (click)="selectMovie(m)"
+         style="cursor:pointer">
+
+    <p>{{m.Title}}</p>
+
+    <!-- LİSTEYE EKLEME BUTONLARI(BASINCA)-->
+    <div *ngIf="selectedMovie === m">
+      <button type="button" (click)="addWatchlist(m)">watchlist</button>
+      <button type="button" (click)="addWatched(m)">watched</button>
+    </div>
+
+  </div>
+</div>

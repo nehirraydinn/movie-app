@@ -1,0 +1,13 @@
+<h2>{{username}}'s already watched</h2>
+<button (click)="goBack()">geri dön</button>
+
+<div class="movie-grid">
+
+  <div class="movie-box" *ngFor="let m of movies">
+
+    <img [src]="m.poster" width="150">
+
+    <p>{{m.title}}</p>
+
+  </div>
+</div>

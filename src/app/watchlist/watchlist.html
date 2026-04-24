@@ -1,0 +1,18 @@
+<h2>{{username}}'s watchlist</h2>
+<button (click)="goBack()">geri dön</button>
+<!-- <p>{{movies | json}}</p> -->
+<div class="movie-grid">
+
+  <div class="movie-box" *ngFor="let m of movies">
+
+    <!-- POSTER -->
+    <img [src]="m.poster"
+         width="150"
+         style="cursor:pointer">
+
+    <!-- TITLE -->
+    <p>{{m.title}}</p>
+    <button (click)="addWatched(m)">watched!</button>
+  </div>
+  
+</div>

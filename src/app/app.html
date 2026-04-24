@@ -1,0 +1,13 @@
+<div class="navbar" *ngIf="isLoggedIn">
+  <h2>MovieApp</h2>
+
+  <div class="nav-right">
+    <span>{{username}}</span>
+
+    <button (click)="goToWatchlist()">watchlist</button>
+    <button (click)="goToWatched()">watched</button>
+    <button (click)="logout()">logout</button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
