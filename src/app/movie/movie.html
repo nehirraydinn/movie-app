@@ -3,13 +3,6 @@
 <input #filmAdi placeholder="film adı gir">
 <button (click)="search(filmAdi.value)">ara</button>
 
-<!-- <button (click)="goToWatchlist()">
-  watchlist
-</button>
-<button (click)="goToWatchedlist()">
-  already watched
-</button> -->
-
 <div class="movie-grid">
   <div class="movie-box" *ngFor="let m of movies">
 

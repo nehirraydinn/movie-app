@@ -27,19 +27,6 @@ export class App {
     }
   });}
 
-//   ngOnInit() {
-//     const id = localStorage.getItem("userId");
-
-//     //kontrol
-//     console.log("APP USERID:", id);
-//     console.log("APP isLoggedIn:", this.isLoggedIn);
-
-//     if (id) {
-//       this.isLoggedIn = true;
-//       this.username = localStorage.getItem("username") || "";
-//     }
-// }
-
   ngOnInit() {
     const id = localStorage.getItem("userId");
 

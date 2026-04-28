@@ -26,7 +26,7 @@ export class MovieComponent {
           console.log(res);
           this.movies = res.Search;
           
-          this.cdr.detectChanges();
+          this.cdr.detectChanges(); // hızlı yenilensin diye manuel yenileme
         },
         error: (err: any) => {
           console.log("HATA:", err);
