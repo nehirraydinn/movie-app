@@ -14,20 +14,45 @@ export class App {
   username: string = "";
   isLoggedIn: boolean = false;
 
-  constructor(private router: Router) {}
-
-  ngOnInit() {
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
     const id = localStorage.getItem("userId");
-
-    //kontrol
-    console.log("APP USERID:", id);
-    console.log("APP isLoggedIn:", this.isLoggedIn);
 
     if (id) {
       this.isLoggedIn = true;
       this.username = localStorage.getItem("username") || "";
+    } else {
+      this.isLoggedIn = false;
+      this.username = "";
     }
-}
+  });}
+
+//   ngOnInit() {
+//     const id = localStorage.getItem("userId");
+
+//     //kontrol
+//     console.log("APP USERID:", id);
+//     console.log("APP isLoggedIn:", this.isLoggedIn);
+
+//     if (id) {
+//       this.isLoggedIn = true;
+//       this.username = localStorage.getItem("username") || "";
+//     }
+// }
+
+  ngOnInit() {
+    const id = localStorage.getItem("userId");
+
+    console.log("APP USERID:", id);
+
+    if (id) {
+      this.isLoggedIn = true;
+      this.username = localStorage.getItem("username") || "";
+    } else {
+      this.isLoggedIn = false;
+      this.username = "";
+    }
+  }
 
   goToWatchlist() {
     this.router.navigate(['/watchlist']);
@@ -49,6 +74,6 @@ export class App {
     this.isLoggedIn = false;
     this.username = "";
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }

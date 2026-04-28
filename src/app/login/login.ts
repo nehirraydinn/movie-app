@@ -39,25 +39,22 @@ export class LoginComponent {
     }).subscribe(res => {
       console.log("GOOGLE RES:", res);
       localStorage.setItem("userId", res.userId);
-      localStorage.setItem("username", this.username);
+      localStorage.setItem("username", res.username);
       this.router.navigate(['/movie']);
     });
   }
 
-  login() {
-  this.http.post<any>("https://localhost:7024/api/user/login", { // api istej
+
+login() {
+  this.http.post<any>("https://localhost:7024/api/user/login", {
     username: this.username,
     password: this.password
   }).subscribe({
     next: (res) => {
-      console.log("RES:", res);
-      alert("giriş başarılı");
-
       localStorage.setItem("userId", res.userId);
       localStorage.setItem("username", res.username);
-      console.log("userId:", res.userId);
-      this.router.navigate(['/movie']);
-      location.reload(); // navbar gelsin diye test deneme
+
+      this.router.navigate(['/movie']); //
     },
 
     error: (err) => {
